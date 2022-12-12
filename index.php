@@ -1,13 +1,12 @@
 <?php 
 
-$paragrafoC20 =
-"Fui catapultato in un mondo completamente nullo, privo di terra, alberi o montagne.
-Una dimensione inesistente dove potevo scorgere solo uno sfondo bianco, null’altro.
-Fui costretto ad agitare le ali per non essere vittima della gravità,
-ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
-“Che diavolo di posto è? Che cosa devo fare? Qui non c’è assolutamente niente…”";
+    $paragrafoC20 = "Fui catapultato in un mondo completamente nullo, privo di terra, alberi o montagne.
+    Una dimensione inesistente dove potevo scorgere solo uno sfondo bianco, null’altro.
+    Fui costretto ad agitare le ali per non essere vittima della gravità,
+    ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
+    “Che diavolo di posto è? Che cosa devo fare? Qui non c’è assolutamente niente…”";
 
-$parola = $_GET['parolaCensura']
+    $parolaCensurata = $_GET['parolaCensurata']
 
 ?>
 
@@ -25,9 +24,8 @@ $parola = $_GET['parolaCensura']
     </header>
 
     <div class="contenitore">
-        <?php echo $paragrafoC20?>
-        
-        
+
+        <p><?php echo str_replace($parolaCensurata, '***', $paragrafoC20)?></p>
 
         <div>Caratteri: <?php echo strlen($paragrafoC20)?></div>
     </div>
@@ -36,9 +34,8 @@ $parola = $_GET['parolaCensura']
     <hr>
 
     <form action="" method="GET" class="contenitore">
-        <input type="text" name="parolaCensura" value="">
+        <input type="text" name="parolaCensurata" value="">
         <button type="submit">Censura</button>
-        <button type="reset">Reset</button>
     </form>
 </body>
 </html>
