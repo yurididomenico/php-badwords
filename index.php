@@ -1,11 +1,13 @@
 <?php 
 
     $paragrafoC20 = 
-    "Fui catapultato in un mondo completamente nullo, privo di terra, alberi o montagne.
+"
+Fui catapultato in un mondo completamente nullo, privo di terra, alberi o montagne.
 Una dimensione inesistente dove potevo scorgere solo uno sfondo bianco, null’altro.
 Fui costretto ad agitare le ali per non essere vittima della gravità,
 ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
-“Che diavolo di posto è? Che cosa devo fare? Qui non c’è assolutamente niente…”";
+“Che diavolo di posto è? Che cosa devo fare? Qui non c’è assolutamente niente…”
+";
 
     $parolaCensurata = $_GET['parolaCensurata']
 
@@ -21,12 +23,17 @@ ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
 </head>
 <body>
     <header>
+        <img src="./assets/img/logo.png" alt="Logo Page">
         <h1>YDD</h1>
     </header>
 
     <div class="contenitore">
 
-        <pre><?php echo str_replace($parolaCensurata, '***', $paragrafoC20)?></pre>
+        <pre>
+            <?php echo str_replace($parolaCensurata, '***', $paragrafoC20)?>
+            <p>Cit.</p>
+        </pre>
+        
 
         <div>Caratteri: <?php echo strlen($paragrafoC20)?></div>
     </div>
@@ -38,6 +45,8 @@ ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
         <input type="text" name="parolaCensurata">
         <button type="submit">Censura</button>
     </form>
+
+
 </body>
 </html>
 
@@ -70,10 +79,22 @@ ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
     header
     {
         background-color: #a48559;
-        padding: 20px;
+        padding: 5px 20px;
         margin-bottom: 50px;
         box-shadow: 0 0 50px black;
-        color: #be9e71;
+        display: flex;
+        align-items: center;
+    }
+
+    header img
+    {
+        width: 100px;
+        padding-right: 20px;
+    }
+    
+    header h1
+    {
+        font-size: 3rem
     }
 
     .contenitore
@@ -85,7 +106,6 @@ ma sapevo bene che ad un certo punto avrei finito le energie e sarei crollato…
     .contenitore pre
     {
         font-size: 1.4rem;
-        margin-bottom: 30px;
         line-height: 30px;
     }
 
